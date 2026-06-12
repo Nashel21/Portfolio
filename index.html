@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nigel Chapwanya | Portfolio</title>
+        <style>
+        body{
+            margin:0;
+            display:flex;}
+        #sidebar{
+            position:fixed;
+            top:0;
+            left:-300px;
+            z-index:1000;
+            transition:1s;
+            width:150px;
+            height:100vh;
+            background:#161b22;
+            color:white;
+            padding:20px;
+            box-shadow:2px 0 10px rgba(0,0,0,0.3);
+            box-sizing:border-box;}
+        .menuItem{
+            border: solid 1px #58a6ff;
+            padding:12px;
+            cursor:pointer;
+            border-radius:8px;
+            margin-bottom:10px;
+            transition:1s;}
+        .menuItem:hover{
+            transform:scale(1.05);}
+        #menulist{
+            list-style:none;
+            padding:0;}
+        #floatingMenu{
+            position:fixed;
+            top:20px;
+            left:10px;
+            z-index:1000;
+            background:#58a6ff;
+            color:white;
+            border:none;
+            padding:10px 15px;
+            border-radius:8px;
+            cursor:pointer;
+            font-size:15px;}
+        #backdrop{
+            display:none;
+            position:fixed;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background:rgba(0,0,0,0.5);
+            z-index:999;}
+        #content{
+            flex:1;
+            text-align: center;
+            padding:20px}
+        #aboutcontent{
+            text-align:center;}
+        #prophoto{
+            width:50%;
+            max-width:350px;
+            aspect-ratio:1/1;
+            border-radius:50%;
+            object-fit:cover;
+            border:4px solid #58a6ff;
+            box-shadow:0 0 25px rgba(88,166,255,0.5)}
+        #statCards{
+            display:flex;
+            justify-content:center;
+            gap:20px;
+            flex-wrap:wrap;
+            margin-top:20px;
+            margin-bottom:20px;}
+        .statCard{
+            background-color:rgb(128, 161, 199);
+            padding:10px;
+            border-radius:10px;
+            transition:1s;
+            cursor:pointer;}
+        .statCard:hover{
+            transform:translateY(-4px);
+            box-shadow:0 0 15px rgba(88,166,255,0.5);}
+        h2{
+            text-align:center;}
+        .skbar{
+            width:80%;
+            background:#30363d;
+            border-radius:10px;
+            overflow:hidden;}
+        .progress{
+            height:20px;
+            background:#58a6ff;}
+        #projectsContainer{
+            display:flex;
+            gap:20px;
+            flex-wrap:wrap;
+            justify-content:center;
+            margin-top:20px;}
+        .procard{
+            background:#161b22;
+            color:white;
+            padding:20px;
+            border-radius:12px;
+            border:1px solid #58a6ff;
+            width:90%;
+            max-width:300px;
+            transition:0.3s;
+            cursor:pointer;}
+        .procard:hover{
+            transform:translateY(-8px);
+            box-shadow:0 0 20px rgba(88,166,255,0.5);}
+        #backBtn{
+            background:#58a6ff;
+            color:white;
+            border:none;
+            padding:10px;
+            border-radius:8px;
+            cursor:pointer;}
+        #backBtn:hover{
+            transform:scale(1.05);}
+        .contactCard{
+            color:white;
+            background:#161b22;
+            border:1px solid #58a6ff;
+            border-radius:12px;
+            padding:20px;
+            width:90%;
+            max-width:250px;
+            margin:20px auto;
+            text-align:center;
+            transition:0.3s;
+            cursor:pointer;}
+        .contactCard:hover{
+            transform:translateY(-4px);
+            box-shadow:0 0 20px rgba(88,166,255,0.5);}
+        .fadeIn{
+            animation:fadeIn 0.8s ease;}
+        @keyframes fadeIn{
+            from{
+                opacity:0;
+                transform:scale(0.8);
+            }to{
+                opacity:1;
+                transform:scale(1px);
+            }}
+        </style>   
+    </head>
+    <body>
+        <div id="sidebar">
+            <ul id="menulist">
+                <li id="aboutBtn" class="menuItem">About Me</li>
+                <li id="skillsBtn" class="menuItem">Skills</li>
+                <li id="projectsBtn" class="menuItem">Projects</li>
+                <li id="contactBtn" class="menuItem">Contact</li>
+            </ul>
+        </div>
+        <button id="floatingMenu"> ☰ </button>
+        <div id="backdrop"></div>
+        <div id="content">
+            <h1>Welcome</h1>
+            <p>Select an item from the menu.</p>
+        </div>
+        <script>
+            let sidebar = document.getElementById("sidebar");
+            let floatingMenu = document.getElementById("floatingMenu");
+            function setActive(selected){
+                let items = document.getElementsByClassName("menuItem");
+                for(let i = 0; i < items.length; i++){
+                    items[i].style.background = "";
+                    items[i].style.color = "white";
+                }
+                selected.style.background = "#58a6ff";
+                selected.style.color = "white";
+            }
+            function changeContent(contentHTML){
+                content.innerHTML = contentHTML;
+                content.classList.remove("fadeIn");
+                void content.offsetWidth;
+                content.classList.add("fadeIn");
+            }
+            let about = document.getElementById("aboutBtn");
+            let skills = document.getElementById("skillsBtn");
+            let projects = document.getElementById("projectsBtn");
+            let contact = document.getElementById("contactBtn");
+            let content = document.getElementById("content");
+            let backdrop = document.getElementById("backdrop");
+            about.addEventListener("click", function(){
+                setActive(about);
+                changeContent(`
+                <div id="aboutcontent">
+                    <img id="prophoto" src="profile.jpg">
+                    <h1>Nigel Njini Chapwanya</h1>
+                    <h3>Final-Year BCA Student & Aspiring Software Developer </h3>
+                    <div id="statCards">
+
+                    <div class="statCard">
+                    🎓 BCA Student
+                    </div>
+
+                    <div class="statCard">
+                    🏆 Bronze Medal
+                    </div>
+
+                    <div class="statCard">
+                    💻 Developer
+                    </div>
+
+                    <div class="statCard">
+                    🌍 Zimbabwe
+                    </div>
+
+                    </div>
+                    <p>
+                        I am Nigel Njini Chapwanya, a final-year Bachelor of Computer Applications (BCA)
+                        student at MVN University, expected to graduate in June 2027.
+                        I enjoy solving problems through programming and continuously improving my
+                        technical skills in Python, C, C++, JavaScript, HTML and SQL.
+
+                        My goal is to gain practical industry experience through internships and
+                        software development projects while building a strong foundation for an
+                        international career in technology.
+                    </p>
+                </div>
+                `);
+            });
+            skills.addEventListener("click", function(){
+                setActive(skills);
+                changeContent(`
+                <h2><u>Skills</u></h2>
+
+                <div style="text-align: left;">
+
+                    <p>Python</p>
+                    <div class="skbar">
+                        <div class="progress" style="width:90%;"></div>
+                    </div>
+
+                    <p>HTML</p>
+                    <div class="skbar">
+                        <div class="progress" style="width:90%;"></div>
+                    </div>
+
+                    <p>CSS</p>
+                    <div class="skbar">
+                        <div class="progress" style="width:90%;"></div>
+                    </div>
+
+                    <p>JavaScript</p>
+                    <div class="skbar">
+                        <div class="progress" style="width:90%;"></div>
+                    </div>
+
+                    <p>C++</p>
+                    <div class="skbar">
+                        <div class="progress" style="width:80%;"></div>
+                    </div>
+
+                    <p>C</p>
+                    <div class="skbar">
+                        <div class="progress" style="width:70%;"></div>
+                    </div>
+
+                    <p>Java</p>
+                    <div class="skbar">
+                        <div class="progress" style="width:40%;"></div>
+                    </div>
+
+                    <p>SQL</p>
+                    <div class="skbar">
+                        <div class="progress" style="width:30%;"></div>
+                    </div>
+
+                </div>
+                `);
+
+            });
+            projects.addEventListener("click", function(){
+                setActive(projects);
+                changeContent(`
+                <h2>Projects</h2>
+                <div id="projectsContainer">
+
+                    <div class="procard" id="calculatorCard">
+                
+                        <h3>Calculator Application</h3>
+                
+                        <p>Developed during the Code Begins competition organized by MVN University.</p>
+                        <p>🥉 Bronze Medal</p>
+                    </div>
+
+                    <div class="procard">
+
+                        <h3>Future Project</h3>
+                        <p> Coming soon...</p>
+                        <p> 🚀 In Development </p>
+                    </div>
+                </div>    
+                `)
+                let calculatorCard = document.getElementById("calculatorCard");
+                calculatorCard.addEventListener("click", function(){
+                    changeContent(`
+                    <div style="text-align: right;">
+                        <button id="backBtn">
+                            ← Back
+                        </button>
+                    </div>
+                    <div style="text-align: center;">
+                    <h1>Calculator Application</h1>
+
+                    <p>This calculator was developed for the Code Begins Programming Competition organized by MVN University.</p>
+                    
+                    <h2>Technologies Used:</h2>
+                        <p>C Programming</p>
+                        <p>Logic Building</p>
+                        <p>User Input Handling</p>
+
+                    <p> <u>Achievement:</u> Bronze Medal 🥉 </p>
+                    </div>
+                    `);
+                    let backBtn = document.getElementById("backBtn");
+                    backBtn.addEventListener("click", function(){
+                        projects.click();
+                    });
+                });
+            });
+            contact.addEventListener("click", function(){
+                setActive(contact);
+                changeContent(`
+                <h2 style="text-align:center;">Contact Me</h2>
+                <div class="contactCard">
+                    <h3>📧 Email</h3>
+                    <a href="mailto:sitachapeh@gmail.com">sitachapeh@email.com</a>
+                </div>
+
+                <div class="contactCard">
+                    <h3>💼 LinkedIn</h3>
+                    <a href="https://www.linkedin.com/in/nigel-njini-chapwanya-5bb782338">View Profile</a>
+                </div>
+                
+                <div class="contactCard">
+                    <h3>📱 Phone</h3>
+                    <a href="https://wa.me/qr/KT5JNRQFO7PXJ1">+918570940576</a>
+                </div>
+                `)
+            });
+            floatingMenu.addEventListener("mouseenter", function(){
+                sidebar.style.left = "0px";
+                backdrop.style.display = "block";
+                floatingMenu.style.display = "none";
+            });
+            sidebar.addEventListener("mouseleave", function(){
+                sidebar.style.left = "-300px";
+                backdrop.style.display = "none";
+                floatingMenu.style.display = "block";
+            });
+        </script>
+    </body>
+</html>
