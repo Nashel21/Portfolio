@@ -7,7 +7,21 @@
         <style>
         body{
             margin:0;
-            display:flex;}
+            display:flex;
+            margin:0;
+            display:flex;
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("bground.jpg");
+            background-size:cover;
+            background-position:center;
+            background-repeat:no-repeat;
+            background-attachment:fixed;
+            font-family: 'Poppins', sans-serif;
+            color:rgb(14, 197, 14);}
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            text-align:center;}
+        a{
+            color:#35b393;}
         #sidebar{
             position:fixed;
             top:0;
@@ -16,13 +30,13 @@
             transition:1s;
             width:150px;
             height:100vh;
-            background:#161b22;
-            color:white;
+            background:rgba(255,255,255,0.05);
+            backdrop-filter:blur(3px);
             padding:20px;
-            box-shadow:2px 0 10px rgba(0,0,0,0.3);
+            box-shadow:2px 0 10px rgba(88,166,255,0.5);
             box-sizing:border-box;}
         .menuItem{
-            border: solid 1px #58a6ff;
+            border: solid 1px rgb(6, 138, 6);
             padding:12px;
             cursor:pointer;
             border-radius:8px;
@@ -38,8 +52,9 @@
             top:20px;
             left:10px;
             z-index:1000;
-            background:#58a6ff;
-            color:white;
+            background:rgba(255, 255, 255, 0.151);
+            backdrop-filter:blur(3px);
+            color: rgb(46, 185, 46);
             border:none;
             padding:10px 15px;
             border-radius:8px;
@@ -66,8 +81,7 @@
             aspect-ratio:1/1;
             border-radius:50%;
             object-fit:cover;
-            border:4px solid #58a6ff;
-            box-shadow:0 0 25px rgba(88,166,255,0.5)}
+            box-shadow:0 0 15px rgb(37, 127, 143);}
         #statCards{
             display:flex;
             justify-content:center;
@@ -76,16 +90,16 @@
             margin-top:20px;
             margin-bottom:20px;}
         .statCard{
-            background-color:rgb(128, 161, 199);
+            background:rgba(255,255,255,0.05);
+            border:1px solid rgb(88, 166, 255,0.2);
+            backdrop-filter:blur(3px);
             padding:10px;
             border-radius:10px;
             transition:1s;
             cursor:pointer;}
         .statCard:hover{
             transform:translateY(-4px);
-            box-shadow:0 0 15px rgba(88,166,255,0.5);}
-        h2{
-            text-align:center;}
+            box-shadow:0 0 15px rgb(14, 197, 14);}
         .skbar{
             width:80%;
             background:#30363d;
@@ -93,29 +107,48 @@
             overflow:hidden;}
         .progress{
             height:20px;
-            background:#58a6ff;}
-        #projectsContainer{
+            background:#318d76;}
+        .landscape{
+            max-width:120vw;
+            max-height:120vh;
+            width:auto;
+            height:auto;}
+        .upright{
+            max-width:100vw;
+            max-height:100vh;
+            width:auto;
+            height:auto;
+            object-fit:contain;}
+        #projectsContainer, #certcontainer{
             display:flex;
             gap:20px;
             flex-wrap:wrap;
             justify-content:center;
             margin-top:20px;}
-        .procard{
-            background:#161b22;
-            color:white;
+        .procard, .certcard{
+            background:rgba(255,255,255,0.05);
+            border:1px solid rgb(88, 166, 255,0.2);
+            backdrop-filter:blur(3px);
             padding:20px;
             border-radius:12px;
-            border:1px solid #58a6ff;
             width:90%;
             max-width:300px;
             transition:0.3s;
             cursor:pointer;}
         .procard:hover{
             transform:translateY(-8px);
-            box-shadow:0 0 20px rgba(88,166,255,0.5);}
+            box-shadow:0 0 20px rgb(14, 197, 14);}
+        .certcard:hover{
+            transform:translateY(-8px);
+            box-shadow:0 0 20px rgb(14, 197, 14);}
         #backBtn{
-            background:#58a6ff;
-            color:white;
+            position:fixed;
+            top:20px;
+            left:90%;
+            z-index:1000;
+            background:rgba(255,255,255,0.05);
+            backdrop-filter:blur(3px);
+            color:rgb(46, 185, 46);
             border:none;
             padding:10px;
             border-radius:8px;
@@ -123,9 +156,9 @@
         #backBtn:hover{
             transform:scale(1.05);}
         .contactCard{
-            color:white;
-            background:#161b22;
-            border:1px solid #58a6ff;
+            background:rgba(255,255,255,0.05);
+            border:1px solid rgb(88, 166, 255,0.2);
+            backdrop-filter:blur(3px);
             border-radius:12px;
             padding:20px;
             width:90%;
@@ -152,8 +185,10 @@
     <body>
         <div id="sidebar">
             <ul id="menulist">
+                <li id="homeBtn" class="menuItem">Home</li>
                 <li id="aboutBtn" class="menuItem">About Me</li>
                 <li id="skillsBtn" class="menuItem">Skills</li>
+                <li id="certificatesBtn" class="menuItem">Certificates</li>
                 <li id="projectsBtn" class="menuItem">Projects</li>
                 <li id="contactBtn" class="menuItem">Contact</li>
             </ul>
@@ -161,7 +196,8 @@
         <button id="floatingMenu"> ☰ </button>
         <div id="backdrop"></div>
         <div id="content">
-            <h1>Welcome</h1>
+            <h1>Welcome to my portfolio</h1>
+            <P>This is my personal portfolio, take a tour browsing about my details through the menu on your left.</P>
             <p>Select an item from the menu.</p>
         </div>
         <script>
@@ -173,7 +209,7 @@
                     items[i].style.background = "";
                     items[i].style.color = "white";
                 }
-                selected.style.background = "#58a6ff";
+                selected.style.background = "rgb(6, 138, 6)";
                 selected.style.color = "white";
             }
             function changeContent(contentHTML){
@@ -182,12 +218,26 @@
                 void content.offsetWidth;
                 content.classList.add("fadeIn");
             }
+            function BackButton(returnTo){
+                let backBtn = document.getElementById("backBtn");
+                backBtn.addEventListener("click", function(){
+                    returnTo.click();
+                });
+            }
+            let content = document.getElementById("content");
+            let homecontent = content.innerHTML;
+            let home = document.getElementById("homeBtn");
             let about = document.getElementById("aboutBtn");
             let skills = document.getElementById("skillsBtn");
+            let certificates = document.getElementById("certificatesBtn");
             let projects = document.getElementById("projectsBtn");
             let contact = document.getElementById("contactBtn");
-            let content = document.getElementById("content");
             let backdrop = document.getElementById("backdrop");
+            setActive(home);
+            home.addEventListener("click", function(){
+                setActive(home);
+                changeContent(homecontent);
+            });
             about.addEventListener("click", function(){
                 setActive(about);
                 changeContent(`
@@ -226,6 +276,111 @@
                     </p>
                 </div>
                 `);
+            });
+            certificates.addEventListener("click", function(){
+                setActive(certificates);
+                changeContent(`
+                <h2>Educational Certificates</h2>
+                <div id="certcontainer">
+                    <div id="olevel" class="certcard">
+                        <h3>O Level Certifcate</h3>
+                        <p>Attained at Alheit High School in the year 2021</p>
+
+                        <p>Click to view Certificate</p>
+                    </div>
+
+                    <div id="alevel" class="certcard">
+                        <h3>A Level Certifcate</h3>
+                        <p>Attained at Hippo Valley High School in the year 2023</p>
+
+                        <p>Click to view Certificate</p>
+                    </div>
+
+                    <div id="slicecorn" class="certcard">
+                        <h3>Slice Corn Certifcate</h3>
+                        <p>Attained after attending Slice Corn 2.1 hosted by Edoofa</p>
+
+                        <p>Click to view Certificate</p>
+                    </div>
+                    
+                    <div id="codebegins" class="certcard">
+                        <h3>Code Begins Certifcate</h3>
+                        <p>Attained after competing in a programing competition hosted by MVN University</p>
+                        <p>13 November 2024</p>
+
+                        <p>Click to view Certificate</p>
+                    </div>
+
+                    <div id="MLcet" class="certcard">
+                        <h3>One day Machine Learning Certifcate</h3>
+                        <p>Attained after attending a one day workshop held at MVN University by DUCAT IT Training School</p>
+                        <p>16 October 2024</p>
+
+                        <p>Click to view Certificate</p>
+                    </div>
+                </div>
+                `)
+                let olevel = document.getElementById("olevel");
+                let alevel = document.getElementById("alevel");
+                let slicecorn = document.getElementById("slicecorn");
+                let codebegins = document.getElementById("codebegins");
+                let MLcet = document.getElementById("MLcet");
+                olevel.addEventListener("click", function(){
+                    changeContent(`
+                    <div style="text-align: right;">
+                        <button id="backBtn">
+                            ← Back
+                        </button>
+                    </div>
+                    <img id="OLevel" class="upright" src="OLevel.jpg">
+                    `)
+                    BackButton(certificates);
+                })
+                alevel.addEventListener("click", function(){
+                    changeContent(`
+                    <div style="text-align: right;">
+                        <button id="backBtn">
+                            ← Back
+                        </button>
+                    </div>
+                    <img id="ALevel" class="upright" src="ALevel.jpg">
+                    `)
+                    BackButton(certificates);
+                })
+                slicecorn.addEventListener("click", function(){
+                    changeContent(`
+                    <div style="text-align: right;">
+                        <button id="backBtn">
+                            ← Back
+                        </button>
+                    </div>
+                    <img id="SliceCorn" class="landscape" src="slicecorn.jpg">
+                    `)
+                    BackButton(certificates);
+                })
+                codebegins.addEventListener("click", function(){
+                    changeContent(`
+                    <div style="text-align: right;">
+                        <button id="backBtn">
+                            ← Back
+                        </button>
+                    </div>
+                    <img id="CodeBegins" class="landscape" src="codebegins.jpg">
+                    `)
+                    BackButton(certificates);
+                })
+                MLcet.addEventListener("click", function(){
+                    changeContent(`
+                    <div style="text-align: right;">
+                        <button id="backBtn">
+                            ← Back
+                        </button>
+                    </div>
+                    <img id="MLCET" class="upright" src="MLcet.jpeg">
+                    `)
+                    BackButton(certificates);
+                })
+
             });
             skills.addEventListener("click", function(){
                 setActive(skills);
@@ -290,6 +445,7 @@
                 
                         <p>Developed during the Code Begins competition organized by MVN University.</p>
                         <p>🥉 Bronze Medal</p>
+                        <p>Click to view more details</p>
                     </div>
 
                     <div class="procard">
@@ -318,13 +474,10 @@
                         <p>Logic Building</p>
                         <p>User Input Handling</p>
 
-                    <p> <u>Achievement:</u> Bronze Medal 🥉 </p>
+                    <p> <h2>Achievement:</h2> Bronze Medal 🥉 </p>
                     </div>
                     `);
-                    let backBtn = document.getElementById("backBtn");
-                    backBtn.addEventListener("click", function(){
-                        projects.click();
-                    });
+                    BackButton(projects);
                 });
             });
             contact.addEventListener("click", function(){
@@ -333,7 +486,7 @@
                 <h2 style="text-align:center;">Contact Me</h2>
                 <div class="contactCard">
                     <h3>📧 Email</h3>
-                    <a href="mailto:sitachapeh@gmail.com">sitachapeh@email.com</a>
+                    <a href="mailto:sitachapeh@gmail.com">sitachapeh@gmail.com</a>
                 </div>
 
                 <div class="contactCard">
