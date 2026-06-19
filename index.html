@@ -196,8 +196,14 @@
         <button id="floatingMenu"> ☰ </button>
         <div id="backdrop"></div>
         <div id="content">
-            <h1>Welcome to my portfolio</h1>
-            <P>This is my personal portfolio, take a tour browsing about my details through the menu on your left.</P>
+            <h1>Welcome to my digital portfolio.</h1>
+            <p>I am Nigel Njini Chapwanya, an aspiring software developer passionate 
+                about creating innovative solutions through programming.<br>Here you can 
+                explore my projects, technical skills, certifications, and achievements 
+                that reflect my growth as a developer. <br>Thank you for visiting, and I 
+                hope you enjoy learning more about my journey in technology.
+            </p>
+            <p style="font-style:italic;">"Turning ideas into solutions through code."</p>
             <p>Select an item from the menu.</p>
         </div>
         <script>
@@ -244,79 +250,195 @@
                 <div id="aboutcontent">
                     <img id="prophoto" src="profile.jpg">
                     <h1>Nigel Njini Chapwanya</h1>
-                    <h3>Final-Year BCA Student & Aspiring Software Developer </h3>
+                    <h3>Aspiring Software Developer </h3>
                     <div id="statCards">
+
+                    <div class="statCard">
+                    🌍 Zimbabwean
+                    </div>
 
                     <div class="statCard">
                     🎓 BCA Student
                     </div>
 
                     <div class="statCard">
-                    🏆 Bronze Medal
+                    🌍 Explorer
                     </div>
 
                     <div class="statCard">
                     💻 Developer
                     </div>
 
-                    <div class="statCard">
-                    🌍 Zimbabwe
-                    </div>
-
                     </div>
                     <p>
-                        I am Nigel Njini Chapwanya, a final-year Bachelor of Computer Applications (BCA)
-                        student at MVN University, expected to graduate in June 2027.
-                        I enjoy solving problems through programming and continuously improving my
-                        technical skills in Python, C, C++, JavaScript, HTML and SQL.
+                        I am Nigel Njini Chapwanya, a final-year Bachelor of Computer Applications (BCA) student<br>
+                        at MVN University, India, with a strong passion for software development, problem-solving, <br>
+                        and continuous learning. My journey in technology began with a curiosity about how software<br>
+                        works and has grown into a commitment to building practical solutions through programming and innovation.</p>
 
-                        My goal is to gain practical industry experience through internships and
-                        software development projects while building a strong foundation for an
-                        international career in technology.
+                        <p>Throughout my academic journey, I have developed skills in Python, C, C++, JavaScript, HTML, <br>
+                        CSS, SQL, and Java while working on various projects and participating in programming competitions.<br>
+                        One of my notable achievements was earning a Bronze Medal in the Code Begins Programming Competition<br>
+                        organized by MVN University, where I developed a calculator application and demonstrated my ability<br>
+                        to apply programming concepts to real-world challenges.</p>
+
+                        <p>Beyond technical skills, I enjoy exploring new technologies, improving my coding practices,<br>
+                        and learning modern development techniques. I believe that technology has the power to transform<br>
+                        lives and solve complex problems, which motivates me to continuously expand my knowledge and<br>
+                        capabilities as a developer.</p>
+
+                        <p>Originally from Zimbabwe and currently pursuing my studies in India, I have gained valuable<br>
+                        experiences from diverse educational and cultural environments. These experiences have strengthened<br>
+                        my adaptability, communication skills, and ability to work with people from different backgrounds.</p>
+
+                        <p>My career goal is to become a skilled software engineer capable of developing impactful applications<br>
+                        and contributing to innovative technology solutions. I am actively seeking opportunities to gain practical<br>
+                        industry experience through internships, collaborative projects, and professional development programs.<br>
+                        Every project I undertake is an opportunity to learn, improve, and move one step closer to becoming the best<br>
+                        developer I can be.</p>
+
+                        <p>When I am not coding, I enjoy playing basketball, following competitive sports, and spending time exploring<br>
+                        new ideas and technologies. I believe that persistence, curiosity, and a willingness to learn are the keys<br>
+                        to success in the ever-evolving world of technology, and I strive to embody these values in both my academic<br>
+                        and professional journey.
                     </p>
+                    
                 </div>
                 `);
+            });
+            skills.addEventListener("click", function(){
+                setActive(skills);
+                changeContent(`
+                <h2><u>Skills</u></h2>
+
+                <p>
+                    My technical skill set reflects my journey as a software developer and lifelong learner. 
+                    Through coursework, projects, and hands-on experience, I have developed proficiency in 
+                    several programming languages and technologies. While some skills are more advanced than 
+                    others, I remain committed to continuous growth and mastering new tools within the 
+                    ever-evolving technology landscape.
+                </p>
+
+                <div style="text-align: left;">
+
+                    <p>Python</p>
+                    <div class="skbar">
+                        <div class="progress" style="width:90%;"></div>
+                    </div>
+
+                    <p>HTML</p>
+                    <div class="skbar">
+                        <div class="progress" style="width:90%;"></div>
+                    </div>
+
+                    <p>CSS</p>
+                    <div class="skbar">
+                        <div class="progress" style="width:90%;"></div>
+                    </div>
+
+                    <p>JavaScript</p>
+                    <div class="skbar">
+                        <div class="progress" style="width:90%;"></div>
+                    </div>
+
+                    <p>C++</p>
+                    <div class="skbar">
+                        <div class="progress" style="width:80%;"></div>
+                    </div>
+
+                    <p>C</p>
+                    <div class="skbar">
+                        <div class="progress" style="width:70%;"></div>
+                    </div>
+
+                    <p>Java</p>
+                    <div class="skbar">
+                        <div class="progress" style="width:50%;"></div>
+                    </div>
+
+                    <p>SQL</p>
+                    <div class="skbar">
+                        <div class="progress" style="width:40%;"></div>
+                    </div>
+
+                </div>
+                `);
+
             });
             certificates.addEventListener("click", function(){
                 setActive(certificates);
                 changeContent(`
                 <h2>Educational Certificates</h2>
+                <p>
+                    This section highlights academic qualifications, professional 
+                    workshops, and technology-related events that have contributed 
+                    to my educational and technical development. Each certificate 
+                    represents a milestone in my continuous learning journey and 
+                    commitment to expanding my knowledge in the field of computer science and technology.
+                </p>
                 <div id="certcontainer">
                     <div id="olevel" class="certcard">
                         <h3>O Level Certifcate</h3>
-                        <p>Attained at Alheit High School in the year 2021</p>
+                        <p>
+                            Awarded upon successful completion of the Zimbabwe 
+                            School Examinations Council (ZIMSEC) Ordinary Level 
+                            studies at Alheit High School in 2021, demonstrating 
+                            a strong academic foundation across multiple subjects.
+                        </p>
+                        <p>2021</p>
 
-                        <p>Click to view Certificate</p>
+                        <p><i>Click to view Certificate</i></p>
                     </div>
 
                     <div id="alevel" class="certcard">
                         <h3>A Level Certifcate</h3>
-                        <p>Attained at Hippo Valley High School in the year 2023</p>
-
-                        <p>Click to view Certificate</p>
+                        <p>
+                            Awarded upon successful completion of Advanced Level 
+                            studies at Hippo Valley High School in 2023, reflecting 
+                            academic achievement and preparation for higher education 
+                            in the field of computing and technology.
+                        </p>
+                        <p>2023</p>
+                        <p><i>Click to view Certificate</i></p>
                     </div>
 
                     <div id="slicecorn" class="certcard">
                         <h3>Slice Corn Certifcate</h3>
-                        <p>Attained after attending Slice Corn 2.1 hosted by Edoofa</p>
+                        <p>
+                            Certificate of participation awarded for attending Slice 
+                            Corn 2.0, a technology and innovation event hosted by Edoofa 
+                            at Lovely Professional University (LPU), providing exposure 
+                            to emerging industry trends and professional networking opportunities.
+                        </p>
+                        <p>9 November 2024</p>
 
-                        <p>Click to view Certificate</p>
+                        <p><i>Click to view Certificate</i></p>
                     </div>
                     
                     <div id="codebegins" class="certcard">
                         <h3>Code Begins Certifcate</h3>
-                        <p>Attained after competing in a programing competition hosted by MVN University</p>
+                        <p>
+                            Certificate awarded for participation in the Code Begins Programming 
+                            Competition organized by MVN University. The 
+                            competition provided an opportunity to demonstrate programming, 
+                            problem-solving, and software development skills in a competitive environment.
+                        </p>
                         <p>13 November 2024</p>
 
-                        <p>Click to view Certificate</p>
+                        <p><i>Click to view Certificate</i></p>
                     </div>
 
                     <div id="MLcet" class="certcard">
                         <h3>One day Machine Learning Certifcate</h3>
-                        <p>Attained after attending a one day workshop held at MVN University by DUCAT IT Training School</p>
+                        <p>
+                            Certificate awarded for successful participation in a one-day Machine 
+                            Learning Workshop conducted by DUCAT IT Training School at MVN 
+                            University on 16 October 2024. The workshop introduced fundamental 
+                            machine learning concepts, applications, and industry practices.
+                        </p>
                         <p>16 October 2024</p>
 
-                        <p>Click to view Certificate</p>
+                        <p><i>Click to view Certificate</i></p>
                     </div>
                 </div>
                 `)
@@ -382,70 +504,26 @@
                 })
 
             });
-            skills.addEventListener("click", function(){
-                setActive(skills);
-                changeContent(`
-                <h2><u>Skills</u></h2>
-
-                <div style="text-align: left;">
-
-                    <p>Python</p>
-                    <div class="skbar">
-                        <div class="progress" style="width:90%;"></div>
-                    </div>
-
-                    <p>HTML</p>
-                    <div class="skbar">
-                        <div class="progress" style="width:90%;"></div>
-                    </div>
-
-                    <p>CSS</p>
-                    <div class="skbar">
-                        <div class="progress" style="width:90%;"></div>
-                    </div>
-
-                    <p>JavaScript</p>
-                    <div class="skbar">
-                        <div class="progress" style="width:90%;"></div>
-                    </div>
-
-                    <p>C++</p>
-                    <div class="skbar">
-                        <div class="progress" style="width:80%;"></div>
-                    </div>
-
-                    <p>C</p>
-                    <div class="skbar">
-                        <div class="progress" style="width:70%;"></div>
-                    </div>
-
-                    <p>Java</p>
-                    <div class="skbar">
-                        <div class="progress" style="width:40%;"></div>
-                    </div>
-
-                    <p>SQL</p>
-                    <div class="skbar">
-                        <div class="progress" style="width:30%;"></div>
-                    </div>
-
-                </div>
-                `);
-
-            });
             projects.addEventListener("click", function(){
                 setActive(projects);
                 changeContent(`
                 <h2>Projects</h2>
+                <p>
+                    This section showcases projects that demonstrate my programming knowledge, 
+                    problem-solving abilities, and practical application of software development 
+                    concepts. Each project represents an opportunity to strengthen my technical 
+                    skills while building solutions to real-world challenges and academic objectives.
+                </p>
                 <div id="projectsContainer">
 
                     <div class="procard" id="calculatorCard">
                 
                         <h3>Calculator Application</h3>
-                
-                        <p>Developed during the Code Begins competition organized by MVN University.</p>
-                        <p>🥉 Bronze Medal</p>
-                        <p>Click to view more details</p>
+                        <p>
+                            A desktop-based calculator application developed during the Code Begins Programming Competition organized by MVN University.
+                        </p>
+                        <p>🏆 Achievement: Bronze Medal</p>
+                        <p><i>Click to view project details</i></p>
                     </div>
 
                     <div class="procard">
@@ -464,17 +542,51 @@
                             ← Back
                         </button>
                     </div>
-                    <div style="text-align: center;">
-                    <h1>Calculator Application</h1>
+                    <div style="text-align: left;">
+                        <h1 style="text-align: left;">Calculator Application</h1>
+                        <p>
+                            The Calculator Application was developed as part of the Code Begins 
+                            Programming Competition organized by MVN University. The objective 
+                            of the project was to design and implement a functional calculator 
+                            capable of performing fundamental arithmetic operations while demonstrating 
+                            programming logic, user input handling, and problem-solving skills.
+                        </p>
+                        <h2 style="text-align: left;">Project Objectives</h2>
+                        <ul>
+                            <li>Develop a user-friendly calculator application.</li>
+                            <li>Apply programming fundamentals to solve practical problems.</li>
+                            <li>Strengthen logical thinking and algorithm design skills.</li>
+                            <li>Demonstrate the ability to transform requirements into a working solution.</li>
+                        </ul>
 
-                    <p>This calculator was developed for the Code Begins Programming Competition organized by MVN University.</p>
-                    
-                    <h2>Technologies Used:</h2>
-                        <p>C Programming</p>
-                        <p>Logic Building</p>
-                        <p>User Input Handling</p>
-
-                    <p> <h2>Achievement:</h2> Bronze Medal 🥉 </p>
+                        <h2 style="text-align: left;">Technologies and Concepts Used</h2>
+                        <ul>
+                            <li>C Programming Language</li>
+                            <li>Conditional Statements</li>
+                            <li>Loops</li>
+                            <li>User Input Handling</li>
+                            <li>Mathematical Operations</li>
+                            <li>Problem Solving Techniques</li>
+                        </ul>
+                        <h2 style="text-align: left;">Key Features</h2>
+                        <ul>
+                            <li>Perform Addition, Subtraction, Multiplication, and Division.</li>
+                            <li>Interactive user input system.</li>
+                            <li>Error handling for invalid operations.</li>
+                            <li>Simple and efficient program structure.</li>
+                        </ul>
+                        <h2 style="text-align: left;">Achievement</h2>
+                        <p>
+                            The project earned a Bronze Medal during the Code Begins Programming Competition, 
+                            recognizing its functionality, implementation quality, and demonstration of programming concepts.
+                        </p>
+                        <h2 style="text-align: left;">Skills Demonstrated</h2>
+                        <p>
+                            This project strengthened my understanding of programming logic, debugging, 
+                            algorithm design, and software development fundamentals while providing valuable 
+                            experience in a competitive environment.
+                        </p>
+                        </div>
                     </div>
                     `);
                     BackButton(projects);
